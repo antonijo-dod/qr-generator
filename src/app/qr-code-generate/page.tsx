@@ -9,9 +9,9 @@ export default function QrCodeGenerate() {
   const [string, setString] = useState("");
 
   const downloadQR = () => {
-    const canvas = document.getElementById("123456");
+    const canvas = document.getElementById("123456") as HTMLCanvasElement;
     const pngUrl = canvas
-      .toDataURL("image/png")
+      ?.toDataURL("image/png")
       .replace("image/png", "image/octet-stream");
     let downloadLink = document.createElement("a");
     downloadLink.href = pngUrl;
